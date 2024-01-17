@@ -12,8 +12,7 @@
 // ============================================================================
 package org.talend.mdm.repository.ui.actions.menu;
 
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
@@ -51,7 +50,7 @@ public class NewMenuActionTest {
 
         // run
         Item addedItem = mockAction.createServerObject("abc"); //$NON-NLS-1$
-        assertThat(addedItem, notNullValue());
+        assertNotNull(addedItem);
         assertTrue(parentPath.equals(addedItem.getState().getPath()));
         Mockito.verify(mockAction, Mockito.times(1)).createItemAndSave(Mockito.any(WSMenuItem.class), Mockito.anyString());
     }

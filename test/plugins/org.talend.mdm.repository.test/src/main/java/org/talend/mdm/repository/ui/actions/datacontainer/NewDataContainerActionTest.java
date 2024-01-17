@@ -12,8 +12,7 @@
 // ============================================================================
 package org.talend.mdm.repository.ui.actions.datacontainer;
 
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.doCallRealMethod;
@@ -55,7 +54,7 @@ public class NewDataContainerActionTest {
 
         // run
         Item addedItem = mockAction.createServerObject("abc"); //$NON-NLS-1$
-        assertThat(addedItem, notNullValue());
+        assertNotNull(addedItem);
         assertTrue(pathItemPath.equals(addedItem.getState().getPath()));
         Mockito.verify(mockAction, times(1)).createItemAndSave(Mockito.any(WSDataClusterItem.class), anyString());
     }

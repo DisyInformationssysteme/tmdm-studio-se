@@ -10,7 +10,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.forms,
  org.apache.log4j,
  org.eclipse.ui.console,
- org.apache.commons.io,
  org.apache.httpcomponents.httpclient,
  org.apache.httpcomponents.httpcore,
  org.apache.commons.logging,
@@ -35,5 +34,6 @@ Export-Package: org.talend.mdm.workbench.serverexplorer.console,
  org.talend.mdm.workbench.serverexplorer.ui.dialogs,
  org.talend.mdm.workbench.serverexplorer.ui.views
 Import-Package: com.amalto.workbench.webservices,
- javax.xml.ws
+ javax.xml.ws,
+ org.apache.commons.io
 Automatic-Module-Name: org.talend.mdm.workbench.serverexplorer

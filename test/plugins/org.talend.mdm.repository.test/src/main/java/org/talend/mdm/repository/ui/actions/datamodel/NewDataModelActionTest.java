@@ -12,8 +12,7 @@
 // ============================================================================
 package org.talend.mdm.repository.ui.actions.datamodel;
 
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
@@ -52,7 +51,7 @@ public class NewDataModelActionTest {
         Mockito.doCallRealMethod().when(mockAction).createServerObject(Mockito.anyString());
         // run
         Item addedItem = mockAction.createServerObject("abc"); //$NON-NLS-1$
-        assertThat(addedItem, notNullValue());
+        assertNotNull(addedItem);
         Mockito.verify(mockAction, times(1)).createERDocument(Mockito.any(WSDataModelItem.class));
         Mockito.verify(mockAction, times(1)).createMatchRuleMapInfo(Mockito.any(WSDataModelItem.class));
         Mockito.verify(mockAction, times(1)).createItemAndSave(Mockito.anyString(), Mockito.any(WSDataModelItem.class));

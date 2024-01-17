@@ -31,7 +31,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.browser,
  org.apache.commons.httpclient,
  org.apache.commons.commons-beanutils,
- org.apache.commons.io,
  org.apache.commons.collections,
  org.apache.commons.logging,
  org.apache.commons.discovery,
@@ -54,7 +53,6 @@ Require-Bundle: org.eclipse.ui,
  org.apache.xerces,
  org.talend.studio.studio-utils,
  org.talend.utils,
- org.apache.commons.codec,
  org.apache.log4j,
  org.apache.commons.lang3,
  javax.wsdl,
@@ -107,7 +105,10 @@ Export-Package: com.amalto.workbench,
  com.amalto.workbench.widgets.xmleditor.pagecontent,
  com.amalto.workbench.widgets.xmleditor.util,
  org.talend.mdm.bulkload.client
-Import-Package: org.apache.oro.text.regex
+Import-Package: org.apache.commons.codec,
+ org.apache.commons.codec.binary,
+ org.apache.commons.io,
+ org.apache.oro.text.regex
 Eclipse-BundleShape: dir
 Automatic-Module-Name: org.talend.mdm.workbench
 Bundle-ActivationPolicy: lazy

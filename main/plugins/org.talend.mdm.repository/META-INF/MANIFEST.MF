@@ -31,7 +31,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.talend.designer.core,
  org.apache.commons.httpclient,
  org.apache.commons.collections,
- org.apache.commons.io,
  org.apache.commons.logging,
  org.talend.libraries.apache,
  org.talend.libraries.dom4j-jaxen,
@@ -59,8 +58,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi,
  org.apache.commons.lang,
  org.talend.cwm.mip,
- org.talend.repository.view,
- org.apache.commons.codec
+ org.talend.repository.view
 Bundle-ActivationPolicy: lazy
 Eclipse-RegisterBuddy: org.talend.testutils
 Bundle-ClassPath: .,
@@ -113,6 +111,9 @@ Export-Package: org.talend.mdm.repository.core,
  org.talend.mdm.repository.ui.wizards.process,
  org.talend.mdm.repository.utils
 Import-Package: com.amalto.workbench.webservices,
+ org.apache.commons.codec,
+ org.apache.commons.codec.digest,
+ org.apache.commons.io,
  org.talend.mdm.webservice
 Eclipse-BundleShape: dir
 Automatic-Module-Name: org.talend.mdm.repository

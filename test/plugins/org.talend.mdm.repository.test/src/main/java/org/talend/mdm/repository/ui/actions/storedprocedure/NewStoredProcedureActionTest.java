@@ -11,9 +11,8 @@
 //
 // ============================================================================
 package org.talend.mdm.repository.ui.actions.storedprocedure;
-import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
@@ -50,7 +49,7 @@ public class NewStoredProcedureActionTest {
         Mockito.doCallRealMethod().when(mockAction).createServerObject(Mockito.anyString());
         // run
         Item addedItem = mockAction.createServerObject("abc"); //$NON-NLS-1$
-        assertThat(addedItem, notNullValue());
+        assertNotNull(addedItem);
         assertSame(parentPath, addedItem.getState().getPath());
         Mockito.verify(mockAction, times(1)).createItemAndSave(Mockito.any(WSStoredProcedureItem.class), Mockito.anyString());
     }

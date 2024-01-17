@@ -12,9 +12,8 @@
 // ============================================================================
 package org.talend.mdm.repository.ui.actions.view;
 
-import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
@@ -50,12 +49,12 @@ public class NewViewActionTest {
         Mockito.doCallRealMethod().when(mockAction).createServerObject(Mockito.anyString());
         // run
         Item addedItem = mockAction.createServerObject("abc"); //$NON-NLS-1$
-        assertThat(addedItem, notNullValue());
+        assertNotNull(addedItem);
         assertSame(IPath.SEPARATOR + IViewNodeConstDef.PATH_SEARCHFILTER, addedItem.getState().getPath());
         Mockito.verify(mockAction, times(1)).createItemAndSave(Mockito.any(WSViewItem.class), Mockito.anyString());
 
         addedItem = mockAction.createServerObject(IViewNodeConstDef.PREFIX_VIEW_UPPER + "abc"); //$NON-NLS-1$
-        assertThat(addedItem, notNullValue());
+        assertNotNull(addedItem);
         assertSame(IPath.SEPARATOR + IViewNodeConstDef.PATH_WEBFILTER, addedItem.getState().getPath());
         Mockito.verify(mockAction, times(2)).createItemAndSave(Mockito.any(WSViewItem.class), Mockito.anyString());
 
@@ -65,12 +64,12 @@ public class NewViewActionTest {
         declaredField.set(mockAction, mockContainerItem);
 
         addedItem = mockAction.createServerObject("abc"); //$NON-NLS-1$
-        assertThat(addedItem, notNullValue());
+        assertNotNull(addedItem);
         assertSame(IPath.SEPARATOR + IViewNodeConstDef.PATH_SEARCHFILTER, addedItem.getState().getPath());
         Mockito.verify(mockAction, times(3)).createItemAndSave(Mockito.any(WSViewItem.class), Mockito.anyString());
 
         addedItem = mockAction.createServerObject(IViewNodeConstDef.PREFIX_VIEW_UPPER + "abc"); //$NON-NLS-1$
-        assertThat(addedItem, notNullValue());
+        assertNotNull(addedItem);
         assertSame(IPath.SEPARATOR + IViewNodeConstDef.PATH_WEBFILTER, addedItem.getState().getPath());
         Mockito.verify(mockAction, times(4)).createItemAndSave(Mockito.any(WSViewItem.class), Mockito.anyString());
 
